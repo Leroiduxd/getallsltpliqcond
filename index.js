@@ -3,7 +3,7 @@ const { ethers } = require('ethers');
 require('dotenv').config();
 
 const app = express();
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 const RPC_URL = 'https://testnet.dplabs-internal.com';
 const CONTRACT_ADDRESS = '0xbb24da1f6aaa4b0cb3ff9ae971576790bb65673c';
@@ -100,5 +100,6 @@ app.get('/all', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`🟢 Brokex API running on http://localhost:${port}`);
+  console.log(`🟢 Brokex API running on port ${port}`);
 });
+
